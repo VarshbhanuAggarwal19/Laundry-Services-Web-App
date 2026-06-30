@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundry Services</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+
+    <nav>
+
+        <div class="logo">
+            <h2>Laundry Mart</h2>
+        </div>
+
+        <ul>
+
+            <li><a href="#">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#quality">About Us</a></li>
+            <li><a href="#footer">Contact Us</a></li>
+
+        </ul>
+
+        <div class="user">
+            <h3>Varshbhanu</h3>
+        </div>
+
+    </nav>
+
+    <!-- Hero Section -->
+
+    <section class="hero">
+
+        <div class="left">
+
+            <h1>Revitalize Your Clothes with Expert Laundry Services!</h1>
+
+            <p>
+                From premium dry cleaning to quick wash and fold,
+                we provide reliable laundry services with quality care
+                and timely delivery.
+            </p>
+
+            <button onclick="scrollToBooking()">
+                Book a Service Today
+            </button>
+
+        </div>
+
+        <div class="right">
+
+            <img src="https://images.unsplash.com/photo-1521656693074-0ef32e80a5d5?w=700"
+            alt="Laundry">
+
+        </div>
+
+    </section>
+
+    <!-- Service Overview -->
+
+    <section class="overview">
+
+        <div class="card">
+            <h2>15+</h2>
+            <p>Laundry Services</p>
+        </div>
+
+        <div class="card">
+            <h2>240+</h2>
+            <p>Happy Customers</p>
+        </div>
+
+        <div class="card">
+            <h2>2+</h2>
+            <p>Years Experience</p>
+        </div>
+
+    </section>
+
+    <!-- Booking Section -->
+
+    <section class="booking" id="services">
+
+        <!-- Left -->
+
+        <div class="service-list">
+
+            <h2>Our Services</h2>
+
+            <div class="service">
+
+                <h3>Washing & Drying</h3>
+
+                <p>₹100</p>
+
+                <button onclick="addItem('Washing & Drying',100)">
+                    Add Item
+                </button>
+
+                <button onclick="removeItem('Washing & Drying',100)">
+                    Remove Item
+                </button>
+
+            </div>
+
+            <div class="service">
+
+                <h3>Ironing</h3>
+
+                <p>₹50</p>
+
+                <button onclick="addItem('Ironing',50)">
+                    Add Item
+                </button>
+
+                <button onclick="removeItem('Ironing',50)">
+                    Remove Item
+                </button>
+
+            </div>
+
+            <div class="service">
+
+                <h3>Dry Cleaning</h3>
+
+                <p>₹200</p>
+
+                <button onclick="addItem('Dry Cleaning',200)">
+                    Add Item
+                </button>
+
+                <button onclick="removeItem('Dry Cleaning',200)">
+                    Remove Item
+                </button>
+
+            </div>
+
+            <p>Add items to the cart.</p>
+
+        </div>
+
+        <!-- Right -->
+
+        <div class="cart-section">
+
+            <div class="cart">
+
+                <h2>Cart</h2>
+
+                <ul id="cartItems">
+
+                    <li>No Items Added</li>
+
+                </ul>
+
+                <h3>Total : ₹<span id="total">0</span></h3>
+
+            </div>
+
+            <div class="book">
+
+                <h2>Book Now</h2>
+
+                <input type="text" id="name" placeholder="Full Name">
+
+                <input type="email" id="email" placeholder="Email">
+
+                <input type="tel" id="phone" placeholder="Phone Number">
+
+                <button onclick="bookService()">
+                    Book Now
+                </button>
+
+                <p id="message"></p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Quality -->
+
+    <section class="quality" id="quality">
+
+        <h1>Why Choose Us?</h1>
+
+        <div class="quality-box">
+
+            <div class="q-card">
+                <h3>Premium Service</h3>
+            </div>
+
+            <div class="q-card">
+                <h3>Quick Support</h3>
+            </div>
+
+            <div class="q-card">
+                <h3>Timely Delivery</h3>
+            </div>
+
+            <div class="q-card">
+                <h3>Affordable Price</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Newsletter -->
+
+    <section class="newsletter">
+
+        <h2>Subscribe Newsletter</h2>
+
+        <input type="text" placeholder="Full Name">
+
+        <input type="email" placeholder="Email">
+
+        <button>Subscribe</button>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer id="footer">
+
+        <h2>Laundry Mart</h2>
+
+        <p>About Us</p>
+
+        <p>Important Links</p>
+
+        <p>Contact Us</p>
+
+        <p>Facebook | Instagram | Twitter</p>
+
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+emailjs.init("KFOVkHQfzQIBfpEy8");
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
