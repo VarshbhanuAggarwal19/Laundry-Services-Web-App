@@ -3,252 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laundry Services</title>
+    <title>Laundry Mart</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    
-
+    <!-- --------------------  Navbar -->
     <nav>
-
         <div class="logo">
             <h2>Laundry Mart</h2>
         </div>
-
         <ul>
-
             <li><a href="#">Home</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#quality">About Us</a></li>
-            <li><a href="#footer">Contact Us</a></li>
-
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
-
         <div class="user">
-            <h3>Varshbhanu</h3>
+            <p>Hello</p>
         </div>
-
     </nav>
-
-    <!-- Hero Section -->
-
     <section class="hero">
-
         <div class="left">
-
-            <h1>Revitalize Your Clothes with Expert Laundry Services!</h1>
-
+            <h1>Quality laundry service at your doorstep</h1>
             <p>
-                From premium dry cleaning to quick wash and fold,
-                we provide reliable laundry services with quality care
-                and timely delivery.
+                We provide professional washing, ironing and dry cleaning services at affordable prices. Book your laundry service today and enjoy fast pickup and delivery.
             </p>
-
-            <button onclick="scrollToBooking()">
+            <button onclick="goBooking()">
                 Book a Service Today
             </button>
-
         </div>
-
         <div class="right">
-
-            <img src="https://images.unsplash.com/photo-1521656693074-0ef32e80a5d5?w=700"
-            alt="Laundry">
-
+            <img src="https://c8.alamy.com/comp/3CTWDXE/a-photograph-of-a-24-hour-launderette-in-busan-south-korea-featuring-a-large-front-loading-commercial-washing-machine-with-its-door-open-and-various-korean-signs-on-the-wall-a-launderette-is-a-facility-where-people-can-wash-and-dry-their-laundry-using-self-service-machines-common-in-urban-areas-for-convenience-2025-3CTWDXE.jpg" alt="Laundry">
         </div>
-
     </section>
-
-    <!-- Service Overview -->
-
-    <section class="overview">
-
-        <div class="card">
-            <h2>15+</h2>
-            <p>Laundry Services</p>
-        </div>
-
-        <div class="card">
-            <h2>240+</h2>
-            <p>Happy Customers</p>
-        </div>
-
-        <div class="card">
-            <h2>2+</h2>
-            <p>Years Experience</p>
-        </div>
-
-    </section>
-
-    <!-- Booking Section -->
-
-    <section class="booking" id="services">
-
-        <!-- Left -->
-
-        <div class="service-list">
-
-            <h2>Our Services</h2>
-
-            <div class="service">
-
-                <h3>Washing & Drying</h3>
-
-                <p>₹100</p>
-
-                <button onclick="addItem('Washing & Drying',100)">
-                    Add Item
-                </button>
-
-                <button onclick="removeItem('Washing & Drying',100)">
-                    Remove Item
-                </button>
-
+        <!------------------------ Services Section ----------------------------->
+    <section class="services" id="services">
+        <h2>Our Services</h2>
+        <div class="service-container">
+            <div class="card">
+                <img src="https://thumbs.dreamstime.com/b/happy-housewife-woman-laundry-room-washing-machine-happy-housewife-woman-laundry-room-washing-machine-107763404.jpg" alt="Washing">
+                <h3>Washing</h3>
+                <p>washing for all types of clothes.</p>
+                <h4>₹100</h4>
+                <button onclick="addItem('Washing',100)">Add to Cart</button>
+                <button onclick="removeItem('Washing',100)">Remove</button>
             </div>
-
-            <div class="service">
-
+            <div class="card">
+                <img src="https://img.magnific.com/free-photo/female-hands-ironing-wrinkled-clothes-ironing-board_259150-58449.jpg?semt=ais_hybrid&w=740&q=80" alt="Ironing">
                 <h3>Ironing</h3>
-
-                <p>₹50</p>
-
-                <button onclick="addItem('Ironing',50)">
-                    Add Item
-                </button>
-
-                <button onclick="removeItem('Ironing',50)">
-                    Remove Item
-                </button>
-
+                <p>Perfect ironing to make your clothes neat.</p>
+                <h4>₹50</h4>
+                <button onclick="addItem('Ironing',50)">Add to Cart</button>
+                <button onclick="removeItem('Ironing',50)">Remove</button>
             </div>
-
-            <div class="service">
-
+            <div class="card">
+                <img src="https://media.istockphoto.com/id/1391022910/photo/administrator-at-dry-cleaners-keeps-clean-clothes-on-hangers-in-bag.jpg?s=612x612&w=0&k=20&c=KiOCAAFEzaw_gPjk3LmjzjUlGlWOj-40ytBz9bGS3B0=" alt="Dry Cleaning">
                 <h3>Dry Cleaning</h3>
-
-                <p>₹200</p>
-
-                <button onclick="addItem('Dry Cleaning',200)">
-                    Add Item
-                </button>
-
-                <button onclick="removeItem('Dry Cleaning',200)">
-                    Remove Item
-                </button>
-
+                <p>Special dry cleaning service for clothes.</p>
+                <h4>₹200</h4>
+                <button onclick="addItem('Dry Cleaning',200)">Add to Cart</button>
+                <button onclick="removeItem('Dry Cleaning',200)">Remove</button>
             </div>
-
-            <p>Add items to the cart.</p>
-
         </div>
-
-        <!-- Right -->
-
-        <div class="cart-section">
-
-            <div class="cart">
-
-                <h2>Cart</h2>
-
-                <ul id="cartItems">
-
-                    <li>No Items Added</li>
-
-                </ul>
-
-                <h3>Total : ₹<span id="total">0</span></h3>
-
-            </div>
-
-            <div class="book">
-
-                <h2>Book Now</h2>
-
-                <input type="text" id="name" placeholder="Full Name">
-
-                <input type="email" id="email" placeholder="Email">
-
-                <input type="tel" id="phone" placeholder="Phone Number">
-
-                <button onclick="bookService()">
-                    Book Now
-                </button>
-
-                <p id="message"></p>
-
-            </div>
-
-        </div>
-
     </section>
-
-    <!-- Quality -->
-
-    <section class="quality" id="quality">
-
-        <h1>Why Choose Us?</h1>
-
-        <div class="quality-box">
-
-            <div class="q-card">
-                <h3>Premium Service</h3>
+    <!-- Booking area------------------------>
+    <section class="booking" id="service">
+        <div class="booking-form">
+            <h2>Book Your Service</h2>
+            <input type="text" id="name" placeholder="Enter Your Name">
+            <input type="email" id="email" placeholder="Enter Your Email">
+            <input type="text" id="phone" placeholder="Enter Your Phone Number">
+            <button onclick="bookNow()">Book Now</button>
+            <p id="msg"></p>
+        </div>
+        <div class="cart">
+            <h2>Your Cart</h2>
+            <ul id="list">
+                <li>No Item Added</li>
+            </ul>
+            <h3>Total : ₹<span id="total">0</span></h3>
+        </div>
+    </section>
+        <!-------------------- choose us option ------------------------->
+    <section class="why" id="about">
+        <h2>Why Choose Us</h2>
+        <div class="why-container">
+            <div class="why-box">
+                <h3>Quality Service</h3>
+                <p>We use quality products to keep your clothes fresh and clean.</p>
             </div>
-
-            <div class="q-card">
-                <h3>Quick Support</h3>
+            <div class="why-box">
+                <h3>Fast Delivery</h3>
+                <p>Doorstep pickup and delivery within the promised time.</p>
             </div>
-
-            <div class="q-card">
-                <h3>Timely Delivery</h3>
-            </div>
-
-            <div class="q-card">
+            <div class="why-box">
                 <h3>Affordable Price</h3>
+                <p>Best laundry services at pocket-friendly prices.</p>
             </div>
-
+            <div class="why-box">
+                <h3>Customer Support</h3>
+                <p>Our support team is always ready to help you.</p>
+            </div>
         </div>
-
     </section>
-
-    <!-- Newsletter -->
-
+    <!-------------------- Newsletter -->
     <section class="newsletter">
-
-        <h2>Subscribe Newsletter</h2>
-
-        <input type="text" placeholder="Full Name">
-
-        <input type="email" placeholder="Email">
-
-        <button>Subscribe</button>
-
+        <h2>Subscribe to Our Newsletter</h2>
+        <p>Get updates about offers and new services.</p>
+        <input type="text" id="sname" placeholder="Enter Your Name">
+        <input type="email" id="semail" placeholder="Enter Your Email">
+        <button onclick="subscribe()">
+            Subscribe
+        </button>
+        <p id="submsg"></p>
     </section>
-
-    <!-- Footer -->
-
-    <footer id="footer">
-
-        <h2>Laundry Mart</h2>
-
-        <p>About Us</p>
-
-        <p>Important Links</p>
-
-        <p>Contact Us</p>
-
-        <p>Facebook | Instagram | Twitter</p>
-
+    <!------------------ Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div>
+                <h3>Laundry Mart</h3>
+                <p>
+                    We provide professional laundry services with quality, care and fast delivery.
+                </p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <p>Home</p>
+                <p>Services</p>
+                <p>About</p>
+                <p>Contact</p>
+            </div>
+            <div>
+                <h3>Contact Us</h3>
+                <p>Email : laundrymart@gmail.com</p>
+                <p>Phone : +91 9876543210</p>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">
+            original owner Laundry Mart. 
+        </p>
     </footer>
-
     <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-<script>
-emailjs.init("KFOVkHQfzQIBfpEy8");
-</script>
-
-<script src="script.js"></script>
-
 </body>
 </html>

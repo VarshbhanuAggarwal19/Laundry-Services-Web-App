@@ -1,126 +1,70 @@
 let cart = [];
-let total = 0;
-
-// Scroll to Booking Section
-
-function scrollToBooking() {
-
-    document.getElementById("services").scrollIntoView({
-        behavior: "smooth"
+let totalPrice = 0;
+function goBooking(){
+    document.getElementById("service").scrollIntoView({
+        behavior:"smooth"
     });
-
+}
+function addItem(name,price){
+    let item = {
+        itemName:name,
+        itemPrice:price
+    };
+    cart.push(item);
+    totalPrice = totalPrice + price;
+    showCart();
 }
 
-// Add Item
-
-function addItem(serviceName, price) {
-
-    cart.push({
-        name: serviceName,
-        price: price
-    });
-
-    total = total + price;
-
-    displayCart();
-
-}
-
-// Remove Item
-
-function removeItem(serviceName, price) {
-
-    for (let i = 0; i < cart.length; i++) {
-
-        if (cart[i].name == serviceName) {
-
-            cart.splice(i, 1);
-
-            total = total - price;
-
+function removeItem(name,price){
+    for(let i=0;i<cart.length;i++){
+        if(cart[i].itemName==name){
+            cart.splice(i,1);
+            totalPrice = totalPrice - price;
             break;
-
         }
-
     }
-
-    displayCart();
-
+    showCart();
 }
 
-// Display Cart
-
-function displayCart() {
-
-    let cartList = document.getElementById("cartItems");
-
-    cartList.innerHTML = "";
-
-    if (cart.length == 0) {
-
-        cartList.innerHTML = "<li>No Items Added</li>";
-
+function showCart(){
+    let list=document.getElementById("list");
+    list.innerHTML="";
+    if(cart.length==0){
+        list.innerHTML="<li>No Item Added</li>";
     }
-
-    else {
-
-        for (let i = 0; i < cart.length; i++) {
-
-            let item = document.createElement("li");
-
-            item.innerText = cart[i].name + " - ₹" + cart[i].price;
-
-            cartList.appendChild(item);
-
+    else{
+        for(let i=0;i<cart.length;i++){
+            let li=document.createElement("li");
+            li.innerText=cart[i].itemName+" - ₹"+cart[i].itemPrice;
+            list.appendChild(li);
         }
-
     }
-
-    document.getElementById("total").innerText = total;
-
+    document.getElementById("total").innerText=totalPrice;
 }
-
-// Book Service
-
-function bookService() {
-
+function bookNow(){
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
     let phone = document.getElementById("phone").value;
-
-    if (name == "" || email == "" || phone == "") {
-
+    if(name=="" || email=="" || phone==""){
         alert("Please fill all details.");
         return;
-
     }
+    document.getElementById("msg").innerText =
+    "Booking Successful! We will contact you soon.";
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("phone").value = "";
 
-    let params = {
+}
 
-        name: name,
-        email: email,
-        phone: phone,
-        total: total
-
-    };
-
-    emailjs.send(
-        "service_3exseu4",
-        "template_54wf1pb",
-        params
-    )
-
-    .then(function () {
-
-        document.getElementById("message").innerText =
-        "Thank You For Booking The Service. We will get back to you soon!";
-
-    })
-
-    .catch(function () {
-
-        alert("Email could not be sent.");
-
-    });
-
+function subscribe(){
+    let name=document.getElementById("sname").value;
+    let email=document.getElementById("semail").value;
+    if(name=="" || email==""){
+        alert("Please enter your name and email.");
+        return;
+    }
+    document.getElementById("submsg").innerText="Thank you for subscribing!";
+    document.getElementById("sname").value="";
+    document.getElementById("semail").value="";
 }
